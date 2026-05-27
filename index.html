@@ -1,7 +1,61 @@
-<!DOCTYPE html><html>
-    <head></head>
-    <body>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Minha Página</title>
+    <style>
+        /* Estilização Geral */
+        body {
+            /* Fontes modernas e sem serifa */
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #ffffff;
+            color: #333;
+            padding: 50px;
+            line-height: 1.6;
+        }
+
+        /* Container para cada bloco (Imagem + Link) */
+        .box {
+            margin-bottom: 40px; /* Espaço maior entre os dois blocos */
+            display: flex;
+            flex-direction: column; /* Coloca um em cima do outro */
+            align-items: flex-start; /* Alinha tudo à esquerda */
+        }
+
+        /* Estilo da Imagem */
+        img {
+            margin-bottom: 10px; /* Espaço entre a logo e o texto */
+            border-radius: 4px;  /* Deixa as pontas da logo levemente arredondadas */
+            object-fit: contain;
+        }
+
+        /* Estilo do Link */
+        a {
+            text-decoration: none; /* Remove o sublinhado padrão */
+            color: #2563eb;        /* Um tom de azul mais moderno */
+            font-weight: 500;      /* Deixa a letra levemente mais grossa */
+            font-size: 18px;
+            transition: color 0.2s ease; /* Efeito suave ao passar o mouse */
+        }
+
+        /* Efeito ao passar o mouse no link */
+        a:hover {
+            color: #1d4ed8;
+            text-decoration: underline; /* O sublinhado só aparece no hover */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <img src="logo.webp" alt="Logo Sobre" width="60">
         <a href="sobre.html">Ir para a página Sobre</a>
-        <a href="claudeai.html">Ir para a página Sobre</a>
-    </body>
-    </html>
+    </div>
+
+    <div class="box">
+        <img src="claude.png" alt="Logo Claude" width="60">
+        <a href="claudeai.html">Ir para o site da ia claude</a>
+    </div>
+
+</body>
+</html>
