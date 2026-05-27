@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>PixelForge — Cursos de Desenvolvimento de Games</title>
+  <style>
+    :root{
+      --bg:#0f1724; --card:#111827; --accent:#6ee7b7; --muted:#94a3b8; --glass: rgba(255,255,255,0.04);
+      --maxw:1100px; --radius:12px; font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; background:linear-gradient(180deg,#071123 0%, #071021 40%), var(--bg); color:#e6eef6;
+      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; line-height:1.5;
+    }
+    .container{max-width:var(--maxw); margin:0 auto; padding:28px;}
+    header{display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:18px;}
+    .brand{display:flex; align-items:center; gap:12px; text-decoration:none; color:inherit;}
+    .logo{
+      width:48px; height:48px; border-radius:10px; display:grid; place-items:center; font-weight:700;
+      background:linear-gradient(135deg,#0ea5a4,#7c3aed); box-shadow:0 6px 18px rgba(124,58,237,0.18);
+    }
+    nav{display:flex; gap:16px; align-items:center;}
+    nav a{color:var(--muted); text-decoration:none; padding:8px 10px; border-radius:8px;}
+    nav a:hover{color:var(--accent); background:var(--glass);}
+    .cta{background:linear-gradient(90deg,#34d399,#06b6d4); color:#062024; padding:8px 14px; border-radius:10px; font-weight:600; border:none; cursor:pointer;}
+    .hero{
+      display:grid; grid-template-columns:1fr 380px; gap:24px; align-items:center; margin-bottom:30px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent); padding:26px; border-radius:var(--radius);
+    }
+    .hero h1{margin:0 0 10px 0; font-size:28px;}
+    .hero p{margin:0 0 18px 0; color:var(--muted);}
+    .cards{display:flex; gap:12px; flex-wrap:wrap;}
+    .card{background:var(--card); padding:14px; border-radius:12px; width:100%;}
+    .stat{display:flex; gap:12px; align-items:center;}
+    .stat b{font-size:20px; color:var(--accent);}
+    .searchbar{display:flex; gap:8px; margin-top:10px;}
+    .searchbar input{flex:1; padding:10px 12px; border-radius:10px; border:1px solid rgba(255,255,255,0.04); background:transparent; color:inherit;}
+    .searchbar button{padding:10px 12px; border-radius:10px; border:none; background:var(--accent); color:#022; cursor:pointer;}
+    .features{display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:12px;}
+    .feature{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent); padding:12px; border-radius:10px;}
+    .courses-section{margin-top:22px;}
+    .controls{display:flex; gap:8px; margin-bottom:12px; align-items:center; flex-wrap:wrap;}
+    .chip{padding:8px 12px; background:var(--glass); border-radius:999px; color:var(--muted); cursor:pointer; border:1px solid transparent;}
+    .chip.active{background:linear-gradient(90deg,#0ea5a4,#7c3aed); color:#012; font-weight:700; border-color:rgba(0,0,0,0.12);}
+    .grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:14px;}
+    .course{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent); padding:14px; border-radius:12px; display:flex; flex-direction:column; gap:12px;}
+    .course .thumb{height:120px; border-radius:10px; background:linear-gradient(135deg,#7c3aed,#06b6d4); display:grid; place-items:center; font-weight:700; color:#021; font-size:18px;}
+    .meta{display:flex; justify-content:space-between; align-items:center; gap:12px;}
+    .enroll{background:var(--accent); border:none; padding:8px 12px; border-radius:8px; color:#072; cursor:pointer; font-weight:700;}
+    footer{margin-top:36px; color:var(--muted); padding:20px 0; border-top:1px solid rgba(255,255,255,0.02); display:flex; justify-content:space-between; flex-wrap:wrap;}
+    .about{max-width:520px;}
+    .testimonials{display:flex; gap:12px; align-items:center;}
+    .testimonial{background:var(--card); padding:12px; border-radius:10px; min-width:220px;}
+    /* modal */
+    .modal-back{position:fixed; inset:0; background:rgba(2,6,23,0.6); display:none; align-items:center; justify-content:center; z-index:60;}
+    .modal{background:#071028; padding:18px; border-radius:12px; width:380px; box-shadow:0 10px 40px rgba(2,6,23,0.6);}
+    .modal header{display:flex; justify-content:space-between; align-items:center;}
+    .close{background:transparent; border:none; color:var(--muted); font-size:18px; cursor:pointer;}
+    .form-row{display:flex; gap:8px; margin-top:10px;}
+    .form-row input, .form-row select{flex:1; padding:10px; border-radius:8px; background:transparent; border:1px solid rgba(255,255,255,0.04); color:inherit;}
+    .btn-primary{background:linear-gradient(90deg,#34d399,#06b6d4); border:none; padding:10px 12px; border-radius:8px; color:#062024; cursor:pointer; margin-top:12px; width:100%;}
+    /* responsiveness */
+    @media (max-width:900px){ .hero{grid-template-columns:1fr; } .features{grid-template-columns:repeat(2,1fr);} header{flex-direction:column; align-items:flex-start; gap:12px;} }
+    @media (max-width:520px){ .features{grid-template-columns:1fr;} .grid{grid-template-columns:1fr;} .hero p{font-size:14px;} }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <a class="brand" href="#">
+        <div class="logo">PF</div>
+        <div>
+          <div style="font-weight:700">PixelForge</div>
+          <div style="font-size:12px;color:var(--muted)">Aprenda a criar games — do protótipo ao portfólio</div>
+        </div>
+      </a>
+      <nav>
+        <a href="#cursos">Cursos</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#depoimentos">Depoimentos</a>
+        <a href="#contato">Contato</a>
+        <button class="cta" id="ctaEnroll">Matricule-se</button>
+      </nav>
+    </header>
+
+    <section class="hero" aria-label="Apresentação">
+      <div>
+        <h1>Desenvolva jogos incríveis. Do zero ao lançamento.</h1>
+        <p>Na PixelForge você aprende design, programação e publicação com projetos práticos — Unity, Godot, C#, C++ e pixel art.</p>
+
+        <div class="cards">
+          <div class="card">
+            <div class="stat"><div style="width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,#f97316,#fb7185);display:grid;place-items:center">🎮</div>
+            <div><b>120+</b><div style="font-size:12px;color:var(--muted)">Aulas práticas</div></div></div>
+          </div>
+
+          <div class="card">
+            <div class="stat"><div style="width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,#06b6d4,#7c3aed);display:grid;place-items:center">🏆</div>
+            <div><b>90%</b><div style="font-size:12px;color:var(--muted)">Alunos com portfólio</div></div></div>
+          </div>
+        </div>
+
+        <div class="searchbar" style="margin-top:12px">
+          <input id="search" placeholder="Procurar curso, motor ou estilo (ex: Unity, Pixel Art)" />
+          <button id="searchBtn">Buscar</button>
+        </div>
+
+        <div class="features" style="margin-top:14px">
+          <div class="feature"><strong>Projetos reais</strong><div style="font-size:12px;color:var(--muted)">Desenvolva jogos jogáveis</div></div>
+          <div class="feature"><strong>Aulas on-demand</strong><div style="font-size:12px;color:var(--muted)">Ritmo que você escolher</div></div>
+          <div class="feature"><strong>Mentoria</strong><div style="font-size:12px;color:var(--muted)">Revisões de projeto e feedback</div></div>
+        </div>
+      </div>
+
+      <aside>
+        <div style="background:linear-gradient(180deg,#061826,#0b1730); padding:18px; border-radius:12px;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+            <div><div style="font-size:12px;color:var(--muted)">Próxima turma</div><div style="font-weight:700">Intensivo Unity — Maio</div></div>
+            <div style="text-align:right"><div style="font-size:12px;color:var(--muted)">Vagas</div><div style="font-weight:700">12</div></div>
+          </div>
+          <div style="margin-bottom:12px; font-size:13px; color:var(--muted)">Comece com nosso bootcamp de 8 semanas para dominar prototipagem, física e publicação para PC e mobile.</div>
+          <button class="cta" id="enrollSide">Inscreva-se</button>
+        </div>
+
+        <div style="margin-top:12px;" class="testimonial">
+          <div style="font-size:13px; color:var(--muted)">"Consegui meu primeiro emprego como júnior após concluir o curso de Unity."</div>
+          <div style="margin-top:8px; font-weight:700">— Ana M., ex-aluna</div>
+        </div>
+      </aside>
+    </section>
+
+    <section id="cursos" class="courses-section">
+      <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; margin-bottom:10px;">
+        <h2 style="margin:0">Cursos em destaque</h2>
+        <div style="color:var(--muted); font-size:13px">Escolha um caminho e comece hoje</div>
+      </div>
+
+      <div class="controls">
+        <div id="filters">
+          <button class="chip active" data-filter="all">Todos</button>
+          <button class="chip" data-filter="unity">Unity</button>
+          <button class="chip" data-filter="godot">Godot</button>
+          <button class="chip" data-filter="pixelart">Pixel Art</button>
+          <button class="chip" data-filter="csharp">C#</button>
+        </div>
+        <div style="margin-left:auto; display:flex; gap:8px;">
+          <select id="sort">
+            <option value="pop">Mais populares</option>
+            <option value="new">Mais novos</option>
+            <option value="dur">Duração</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="grid" id="courseGrid">
+        <!-- Cursos preenchidos via JS -->
+      </div>
+    </section>
+
+    <section id="depoimentos" style="margin-top:24px;">
+      <h2>Depoimentos</h2>
+      <div style="display:flex; gap:12px; margin-top:12px; flex-wrap:wrap;">
+        <div class="testimonial">"A mentoria fez toda diferença — meu design melhorou 10x." — Lucas, designer</div>
+        <div class="testimonial">"Projetos práticos e currículo objetivo." — Mariana, desenvolvedora</div>
+        <div class="testimonial">"A comunidade é ativa e colaborativa." — Pedro, aluno</div>
+      </div>
+    </section>
+
+    <section id="sobre" style="margin-top:24px;">
+      <h2>Sobre a PixelForge</h2>
+      <div style="display:flex; gap:18px; margin-top:10px; align-items:flex-start; flex-wrap:wrap;">
+        <div class="about">
+          <p style="color:var(--muted)">A PixelForge foi criada por desenvolvedores e artistas apaixonados por games. Nossos cursos são projetados para que você aprenda fazendo — com feedback e ferramentas do mercado.</p>
+          <ul style="color:var(--muted)">
+            <li>Projetos guiados</li>
+            <li>Acesso a assets e tutoriais exclusivos</li>
+            <li>Comunidade e oportunidades de portfólio</li>
+          </ul>
+        </div>
+        <div style="flex:1; min-width:260px;">
+          <div style="background:linear-gradient(135deg,#8b5cf6,#06b6d4); padding:14px; border-radius:12px;">
+            <div style="font-weight:700">Missão</div>
+            <div style="color:var(--muted); margin-top:8px">Democratizar o aprendizado de desenvolvimento de games com cursos práticos e acessíveis.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato" style="margin-top:24px;">
+      <h2>Contato</h2>
+      <div style="display:flex; gap:12px; margin-top:10px; flex-wrap:wrap;">
+        <div style="flex:1; min-width:280px; background:var(--card); padding:12px; border-radius:10px;">
+          <form id="contactForm">
+            <div style="margin-bottom:8px"><input required name="name" placeholder="Seu nome" style="width:100%; padding:10px; border-radius:8px; background:transparent; border:1px solid rgba(255,255,255,0.04); color:inherit"/></div>
+            <div style="margin-bottom:8px"><input required name="email" placeholder="Email" type="email" style="width:100%; padding:10px; border-radius:8px; background:transparent; border:1px solid rgba(255,255,255,0.04); color:inherit"/></div>
+            <div style="margin-bottom:8px"><textarea name="message" placeholder="Mensagem" rows="4" style="width:100%; padding:10px; border-radius:8px; background:transparent; border:1px solid rgba(255,255,255,0.04); color:inherit"></textarea></div>
+            <button class="btn-primary" type="submit">Enviar mensagem</button>
+          </form>
+        </div>
+
+        <div style="min-width:260px; color:var(--muted)">
+          <div style="font-weight:700">Atendimento</div>
+          <div style="margin-top:8px">contato@pixelforge.edu • +55 11 99999-9999</div>
+          <div style="margin-top:12px; font-size:13px">Endereço: Rua Imaginária, 123 — São Paulo, BR</div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div>© <span id="year"></span> PixelForge — Aprendizado prático em desenvolvimento de games</div>
+      <div style="display:flex; gap:12px; align-items:center;">
+        <a href="#" style="color:var(--muted); text-decoration:none">Política de Privacidade</a>
+        <a href="#" style="color:var(--muted); text-decoration:none">Termos</a>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Modal de inscrição -->
+  <div class="modal-back" id="modal">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <header>
+        <div id="modalTitle" style="font-weight:700">Matricule-se</div>
+        <button class="close" id="modalClose">&times;</button>
+      </header>
+      <div style="color:var(--muted); margin-top:8px; font-size:13px">Escolha um curso e finalize sua inscrição.</div>
+      <div class="form-row">
+        <select id="modalCourse">
+          <!-- preenchido via JS -->
+        </select>
+      </div>
+      <div class="form-row">
+        <input id="studentName" placeholder="Seu nome" />
+      </div>
+      <button class="btn-primary" id="modalSubmit">Confirmar inscrição</button>
+    </div>
+  </div>
+
+  <script>
+    // Dados simulados de cursos
+    const courses = [
+      { id:1, title:"Bootcamp Unity: Do Protótipo ao Jogo", tag:"unity", duration:"8 semanas", popularity:95, desc:"Foco em gameplay, físicas e publicação."},
+      { id:2, title:"Introdução ao Godot", tag:"godot", duration:"6 semanas", popularity:74, desc:"Motor open-source, GDScript e fluxo de trabalho."},
+      { id:3, title:"Pixel Art para Jogos", tag:"pixelart", duration:"4 semanas", popularity:82, desc:"Sprites, animação frame-by-frame e tilesets."},
+      { id:4, title:"Programação C# para Games", tag:"csharp", duration:"5 semanas", popularity:69, desc:"Fundamentos de C# aplicados ao Unity."},
+      { id:5, title:"Design de Níveis e UX para Games", tag:"design", duration:"6 semanas", popularity:70, desc:"Estruturas, ritmo e testes de jogador."},
+      { id:6, title:"Multiplayer Básico (Unity)", tag:"unity", duration:"5 semanas", popularity:64, desc:"Conceitos e implementação básica de rede."}
+    ];
+
+    // DOM refs
+    const grid = document.getElementById('courseGrid');
+    const filters = document.querySelectorAll('.chip');
+    const sortSelect = document.getElementById('sort');
+    const searchInput = document.getElementById('search');
+    const searchBtn = document.getElementById('searchBtn');
+    const modal = document.getElementById('modal');
+    const modalClose = document.getElementById('modalClose');
+    const modalCourse = document.getElementById('modalCourse');
+    const modalSubmit = document.getElementById('modalSubmit');
+    const studentName = document.getElementById('studentName');
+    const ctaEnroll = document.getElementById('ctaEnroll');
+    const enrollSide = document.getElementById('enrollSide');
+    const yearSpan = document.getElementById('year');
+
+    yearSpan.textContent = new Date().getFullYear();
+
+    // Render courses
+    function renderCourses(list){
+      grid.innerHTML = '';
+      list.forEach(c=>{
+        const card = document.createElement('div'); card.className='course';
+        card.innerHTML = `
+          <div class="thumb">${c.tag.toUpperCase()}</div>
+          <div style="font-weight:700">${c.title}</div>
+          <div style="color:var(--muted); font-size:13px">${c.desc}</div>
+          <div class="meta">
+            <div style="color:var(--muted); font-size:13px">${c.duration} • ${c.popularity}% popularidade</div>
+            <div><button class="enroll" data-id="${c.id}">Matricular</button></div>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    // Initial render
+    renderCourses(courses);
+    populateModalCourses();
+
+    // Fill modal select option
+
