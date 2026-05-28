@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Villa Moura Pães | Tradição e Sabor</title>
+    
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap');
 
         /* Variáveis de Cor - Preparadas para o Modo Noturno */
         :root {
-            --cor-primaria: #5c3a21;
-            --cor-secundaria: #d4a373;
+            --cor-primaria: #5c3a21; /* Marrom Escuro */
+            --cor-secundaria: #d4a373; /* Bege */
             --cor-destaque: #e3823c;
             --cor-fundo: #fefae0;
             --cor-texto: #4a4a4a;
@@ -54,10 +55,9 @@
         /* Banner de Sazonalidade */
         .banner-sazonal { background-color: var(--cor-destaque); color: #fff; text-align: center; padding: 10px; font-weight: 500; font-size: 0.9em; }
 
-        /* Cabeçalho Principal - TEXTO DE FUNDO REMOVIDO */
+        /* Cabeçalho Principal com Gradiente Marrom e Bege */
         header { 
-            background-color: var(--cor-primaria);
-            background-image: linear-gradient(rgba(190, 97, 21, 0.863), rgba(0,0,0,0.7)); 
+            background: linear-gradient(135deg, var(--cor-primaria) 0%, var(--cor-secundaria) 100%); 
             color: #fff; 
             text-align: center; 
             padding: 100px 20px; 
@@ -109,7 +109,7 @@
         /* WhatsApp */
         .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background-color: #25d366; color: white; border-radius: 50%; width: 60px; height: 60px; display: flex; justify-content: center; align-items: center; font-size: 30px; text-decoration: none; z-index: 1000; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
     </style>
-</head>
+    </head>
 <body>
 
     <div class="banner-sazonal">
@@ -260,7 +260,6 @@
     <a href="https://wa.me/5511973167104" class="whatsapp-float" target="_blank">💬</a>
 
     <script>
-        // Função 1: Alternar Modo Noturno
         function mudarTema() {
             const body = document.documentElement;
             if(body.getAttribute('data-theme') === 'dark') {
@@ -270,13 +269,12 @@
             }
         }
 
-        // Função 3: Contador Animado de Pães Congelados
         let count = 0;
-        const target = 55000; // Exemplo de pães congelados hoje
+        const target = 55000; 
         const contadorElement = document.getElementById('contador-paes');
         
         const updateCounter = setInterval(() => {
-            count += 67; // Velocidade da animação
+            count += 67; 
             if (count >= target) {
                 contadorElement.innerText = target;
                 clearInterval(updateCounter);
