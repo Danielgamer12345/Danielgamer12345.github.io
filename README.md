@@ -1,3 +1,15 @@
+<<<<<<< HEAD
+Markdown
+<p align="center">
+  <img src="logo.webp" width="100%" />
+</p>
+
+<p align="center">
+  <a href="https://github.com/Danielgamer12345">
+    <img src="https://img.shields.io/badge/DEVELOPER-DANIEL%20SELARI-d4a373?style=for-the-badge&logo=github&logoColor=white" />
+  </a>
+  <img src="https://img.shields.io/badge/Criada-2009-5c3a21?style=for-the-badge" />
+=======
 
 <p align="center">
   <img src="psule-render.vercel.app/render?type=soft&color=5c3a21&height=250&section=header&text=VILLA%20MOURA%20PÃES&fontSize=80&animation=fadeIn&fontAlignY=40" width="100%" />
@@ -8,6 +20,7 @@
     <img src="https://img.shields.io/badge/DEVELOPER-DANIEL%20SELARI-d4a373?style=for-the-badge&logo=github&logoColor=white" />
   </a>
   <img src="https://img.shields.io/badge/ESTABLISHED-2002-5c3a21?style=for-the-badge" />
+>>>>>>> f3e93211426cfa658acb1dcced8dcaf742134a75
   <img src="https://img.shields.io/badge/FROZEN%20TECH-PREMIUM-e3823c?style=for-the-badge" />
 </p>
 
