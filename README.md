@@ -3,10 +3,6 @@
 </p>
 
 <p align="center">
-  <img src="https://capsule-render.vercel.app/render?type=waving&color=5c3a21&height=180&section=header&text=VILLA%20MOURA&fontSize=60&animation=fadeIn&fontAlignY=35&fontColor=fefae0" width="100%" />
-</p>
-
-<p align="center">
   <img src="https://readme-typing-svg.herokuapp.com?font=Playfair+Display&weight=600&size=28&duration=3500&pause=1000&color=5C3A21&center=true&vCenter=true&width=500&lines=Tradição+Artesanal;Tecnologia+de+Ultracongelamento;Qualidade+desde+2002" />
 </p>
 
