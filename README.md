@@ -1,3 +1,4 @@
+Markdown
 <p align="center">
   <img src="https://capsule-render.vercel.app/render?type=soft&color=5c3a21&height=250&section=header&text=VILLA%20MOURA%20PÃES&fontSize=80&animation=fadeIn&fontAlignY=40" width="100%" />
 </p>
@@ -34,19 +35,46 @@ O projeto **Villa Moura Pães** é uma plataforma de conexão entre a panificaç
 
 ## 📊 Nível de Maestria Técnica
 
-```text
-HTML5            [####################] 100%
-CSS3 (Grid/Flex) [####################] 100%
-JavaScript       [###############-----] 75%
-UI/UX Design     [##################--] 90%
-🚀 Ecossistema de DesenvolvimentoRecursoStatusDescriçãoDark Mode v2✅ ConcluídoMudança de tema em tempo real sem refresh.Mobile UX✅ ConcluídoInterface 100% adaptativa para pedidos mobile.Checkout B2B🏗️ Em BreveIntegração direta para grandes panificadoras.API Rastreio📅 PlanejadoStatus do pedido "Do freezer ao seu forno".📂 Organização de Ativos (Assets)Bash📦 Villa-Moura-Site
+**HTML5**
+`████████████████████ 100%`
+
+**CSS3 (Grid/Flex)**
+`████████████████████ 100%`
+
+**JavaScript**
+`███████████████▒▒▒▒▒ 75%`
+
+**UI/UX Design**
+`██████████████████▒▒ 90%`
+
+---
+
+## 🚀 Ecossistema de Desenvolvimento
+
+<p align="left">
+  <img src="https://skillicons.dev/icons?i=html,css,js,vscode,git,github" />
+</p>
+
+| Recurso | Status | Descrição |
+| :--- | :---: | :--- |
+| **Dark Mode v2** | ✅ | Mudança de tema em tempo real. |
+| **Mobile UX** | ✅ | Interface 100% adaptativa. |
+| **Checkout B2B** | 🏗️ | Integração para grandes compras. |
+| **API Rastreio** | 📅 | Status do pão no forno/entrega. |
+
+---
+
+## 📂 Organização de Ativos (Assets)
+
+```bash
+📦 Villa-Moura-Site
  ┣ 📂 assets
  ┃ ┣ 📂 img
- ┃ ┃ ┣ 🖼️ vp.jpg          # Imagem de Capa (Banner Hero)
+ ┃ ┃ ┣ 🖼️ vp.jpg          # Banner Hero
  ┃ ┃ ┣ 🖼️ Sourdough.jpg   # Foto Fermentação Natural
  ┃ ┃ ┗ 🖼️ croissant.jpg   # Foto Massa Folhada
  ┃ ┗ 📂 css
- ┃   ┗ 📄 style.css       # Engine de Estilos Avançados
+ ┃   ┗ 📄 style.css       # Engine de Estilos
  ┣ 📄 index.html          # Estrutura Mestra
- ┗ 📄 README.md           # Inteligência do Repositório
-🤝 Conecte-se ConoscoDúvidas sobre encomendas de grande escala ou parcerias comerciais?
+ ┗ 📄 README.md           # Documentação
+🤝 Conecte-se Conosco
