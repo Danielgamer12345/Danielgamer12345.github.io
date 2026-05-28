@@ -2,64 +2,132 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Minha Página</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Página Tech</title>
     <style>
-        /* Estilização Geral */
+        /* Importando uma fonte moderna do Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+        /* Reset básico */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Fundo com gradiente moderno e centralização total */
         body {
-            /* Fontes modernas e sem serifa */
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background-color: #524f51;
-            color: #333;
-            padding: 50px;
-            line-height: 1.6;
-        }
-
-        /* Container para cada bloco (Imagem + Link) */
-        .box {
-            margin-bottom: 40px; /* Espaço maior entre os dois blocos */
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: #ffffff;
+            min-height: 100vh;
             display: flex;
-            flex-direction: column; /* Coloca um em cima do outro */
-            align-items: flex-start; /* Alinha tudo à esquerda */
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
         }
 
-        /* Estilo da Imagem */
-        img {
-            margin-bottom: 10px; /* Espaço entre a logo e o texto */
-            border-radius: 4px;  /* Deixa as pontas da logo levemente arredondadas */
+        /* Container flexível */
+        .container {
+            display: flex;
+            flex-direction: row;
+            gap: 40px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        /* Estilo do Card (Efeito de Vidro / Glassmorphism) */
+        .box {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px); /* Suporte para Safari */
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px 30px;
+            width: 280px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Efeito de transição elástico */
+        }
+
+        /* Animação ao passar o mouse no Card */
+        .box:hover {
+            transform: translateY(-15px); /* Sobe o card levemente */
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(0, 230, 230, 0.4); /* Borda brilha em ciano */
+            box-shadow: 0 25px 45px rgba(0, 230, 230, 0.15); /* Sombra colorida */
+        }
+
+        /* Estilo da Imagem/Logo */
+        .box img {
+            width: 100px;
+            height: 100px;
             object-fit: contain;
+            margin-bottom: 30px;
+            filter: drop-shadow(0 8px 10px rgba(0,0,0,0.3)); /* Sombra na própria imagem */
+            transition: transform 0.4s ease;
         }
 
-        /* Estilo do Link */
-        a {
-            text-decoration: none; /* Remove o sublinhado padrão */
-            color: #0ee6c9;        /* Um tom de azul mais moderno */
-            font-weight: 500;      /* Deixa a letra levemente mais grossa */
-            font-size: 18px;
-            transition: color 0.2s ease; /* Efeito suave ao passar o mouse */
+        /* Faz a logo dar um zoom ao passar o mouse no card */
+        .box:hover img {
+            transform: scale(1.15);
         }
 
-        /* Efeito ao passar o mouse no link */
-        a:hover {
-            color: #ff0000;
-            text-decoration: underline; /* O sublinhado só aparece no hover */
+        /* Título do Card (opcional, adicionei para ficar mais completo) */
+        .box h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #ffffff;
+            letter-spacing: 1px;
         }
+
+        /* Estilo do Link transformado em Botão */
+        .box a {
+            text-decoration: none;
+            color: #ffffff;
+            background: linear-gradient(90deg, #00c6ff 0%, #0072ff 100%);
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-size: 15px;
+            font-weight: 500;
+            width: 100%;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 114, 255, 0.4);
+        }
+
+        /* Efeito ao passar o mouse no botão */
+        .box a:hover {
+            background: linear-gradient(90deg, #0072ff 0%, #00c6ff 100%);
+            box-shadow: 0 8px 25px rgba(0, 114, 255, 0.6);
+            transform: scale(1.05);
+        }
+
     </style>
 </head>
 <body>
 
-    <div class="box">
-        <img src="logo.webp" alt="Logo Sobre" width="60">
-        <a href="sobre.html">Ir para a página Sobre</a>
-    </div>
+    <div class="container">
+        <div class="box">
+            <img src="logo.webp" alt="Logo Sobre">
+            <h3>Sobre Nós</h3>
+            <a href="sobre.html">Acessar Página</a>
+        </div>
 
-     <div class="box">
-        <img src="gemini.png" alt="Logo Sobre" width="60">
-        <a href="gemini.html">Ir para o site do gemini</a>
-    </div>
+        <div class="box">
+            <img src="gemini.png" alt="Logo Gemini">
+            <h3>Google Gemini</h3>
+            <a href="gemini.html">Acessar Site</a>
+        </div>
 
-    <div class="box">
-        <img src="claude.png" alt="Logo Claude" width="60">
-        <a href="claudeai.html">Ir para o site da ia claude</a>
+        <div class="box">
+            <img src="claudeai.png" alt="Logo Claude">
+            <h3>Claude AI</h3>
+            <a href="claudeai.html">Acessar Site</a>
+        </div>
     </div>
 
 </body>
